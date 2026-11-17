@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Paper Room 拍貼機整合管理（內容參考）</title>
+  <meta name="description" content="數字截至 2026-11-01 10:24（台北時間），不是即時資料；商戶後台登入已於 2026-11-13 過期。">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("paperroom-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">跳至內容</a>
+  <header class="site-header">
+    <div class="titles">
+      <h1>Paper Room 拍貼機整合管理<wbr>（內容參考）</h1>
+      <p class="lead">數字截至 <span class="nowrap">2026-11-01 10:24</span>（台北時間），不是即時資料；商戶後台登入已於 <span class="nowrap">2026-11-13</span> 過期。</p>
+    </div>
+    <button type="button" class="theme-toggle" id="theme-toggle">外觀</button>
+  </header>
+
+  <nav class="toc" aria-label="頁面章節">
+    <a href="#entries">後台入口</a>
+    <a href="#status">整體狀況（2026-11-01 10:24）</a>
+    <a href="#machines">兩台機台比較</a>
+    <a href="#revenue">營收</a>
+    <a href="#faults">故障紀錄</a>
+    <a href="#unset">後台裡尚未設定的功能（2026-11-01）</a>
+    <a href="#todos">待辦與決策（截至 2026-11-17）</a>
+    <a href="#schedule">排程狀態</a>
+  </nav>
+
+  <main id="content">
+    <section id="entries" aria-labelledby="entries-heading">
+      <h2 id="entries-heading">後台入口</h2>
+      <ul class="entries">
+        <li>
+          商戶後台（兩台都看得到）：<a href="https://timefilter.aishiguang.net/merchant/#/home">https://<wbr>timefilter.aishiguang.net/<wbr>merchant/#/home</a> （經 Casdoor 用 email 帳號登入，不用手機號碼）
+        </li>
+        <li>
+          上傳後台（只看得到 14800）：<a href="https://open.timefilter.aishiguang.net">https://<wbr>open.timefilter.aishiguang.net</a> （帳號 14800）
+        </li>
+        <li>
+          Paper Room 拍貼機紀錄表：<a href="https://docs.google.com/spreadsheets/d/1kEh00nAgCw-cBLtCmwsJJAkqkM65LW64_sy0YJ4vDwc/edit">https://<wbr>docs.google.com/<wbr>spreadsheets/d/<wbr>1kEh00nAgCw-cBLtCmwsJJ<wbr>AkqkM65LW64_sy0YJ4vDwc/<wbr>edit</a>
+        </li>
+      </ul>
+      <p class="note">密碼與遠端驗證碼不放在本頁。</p>
+    </section>
+
+    <section id="status" aria-labelledby="status-heading">
+      <h2 id="status-heading">整體狀況（2026-11-01 10:24）</h2>
+      <p class="stats">
+        <span><span class="k">累計營業額</span> <span class="v">¥1,200.24</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">累計訂單</span> <span class="v">63</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">在線機台</span> <span class="v">0/2（最後讀取時離線）</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">耗材不足機台</span> <span class="v">0/2（提醒值 20）</span></span>
+      </p>
+    </section>
+
+    <section id="machines" aria-labelledby="machines-heading">
+      <h2 id="machines-heading">兩台機台比較</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">項目</th>
+              <th scope="col">14774<wbr>（TFD20260811-<wbr>14774-PASR）</th>
+              <th scope="col">14800<wbr>（TFD20260817-<wbr>14800-PASR）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">貼紙剩餘</th>
+              <td>192</td>
+              <td>187</td>
+            </tr>
+            <tr>
+              <th scope="row">低耗材提醒值</th>
+              <td>20</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th scope="row">點數</th>
+              <td>759</td>
+              <td>759</td>
+            </tr>
+            <tr>
+              <th scope="row">拍照基本價</th>
+              <td>0（測試值）</td>
+              <td>0（測試值）</td>
+            </tr>
+            <tr>
+              <th scope="row">加印價</th>
+              <td>0.01（測試值）</td>
+              <td>0.01（測試值）</td>
+            </tr>
+            <tr>
+              <th scope="row">最後更新</th>
+              <td>2026/10/26 16:13</td>
+              <td>2026/10/26 17:48</td>
+            </tr>
+            <tr>
+              <th scope="row">狀態（最後讀取時）</th>
+              <td><span class="pill pill-off">離線</span></td>
+              <td><span class="pill pill-off">離線</span></td>
+            </tr>
+            <tr>
+              <th scope="row">軟體版本</th>
+              <td><span class="muted">無資料</span></td>
+              <td>2.2.32</td>
+            </tr>
+            <tr>
+              <th scope="row">最後上線（上傳後台）</th>
+              <td><span class="muted">無資料</span></td>
+              <td>2026-10-29 20:05</td>
+            </tr>
+            <tr>
+              <th scope="row">介面</th>
+              <td><span class="muted">無資料</span></td>
+              <td>14800-貼紙大頭貼-繁體</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="callout">價格還是測試值：Leon 已決定先不改，要改之前先回報。</p>
+    </section>
+
+    <section id="revenue" aria-labelledby="revenue-heading">
+      <h2 id="revenue-heading">營收</h2>
+      <ul>
+        <li>兩台合計（商戶後台）：63 筆，¥1,200.24</li>
+        <li>14800 上傳後台：27 筆，¥300.22（含於合計）</li>
+        <li>其餘 ¥900.02 不能直接當成 14774 營收。</li>
+      </ul>
+      <p>近期訂單（2026-10-25～10-26）：14774 18 筆、單筆 0、機台離線付款、退款 0；14800 3 筆、單筆 0.01、機台離線付款、退款 0。</p>
+    </section>
+
+    <section id="faults" aria-labelledby="faults-heading">
+      <h2 id="faults-heading">故障紀錄</h2>
+      <p>2026-11-01 12:04（台北時間）之前 19 則已全部修好；之後才開始記錄，目前無新故障列。</p>
+    </section>
+
+    <section id="unset" aria-labelledby="unset-heading">
+      <h2 id="unset-heading">後台裡尚未設定的功能（2026-11-01）</h2>
+      <p class="flags">
+        <span>WeChat 故障通知 未開啟</span><span class="sep" aria-hidden="true">；</span>
+        <span>優惠券 尚未建立</span><span class="sep" aria-hidden="true">；</span>
+        <span>錢包／銀行卡 未綁定</span><span class="sep" aria-hidden="true">；</span>
+        <span>店址 未填寫</span><span class="sep" aria-hidden="true">；</span>
+        <span>員工帳號與權限 可新增尚未使用</span><span class="sep" aria-hidden="true">；</span>
+        <span>遠端重開機 機台頁有按鈕</span><span class="sep" aria-hidden="true">。</span>
+      </p>
+    </section>
+
+    <section id="todos" aria-labelledby="todos-heading">
+      <h2 id="todos-heading">待辦與決策（截至 2026-11-17）</h2>
+      <ul class="tasks">
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>重新登入商戶後台，查兩台目前的貼紙數量（登入 11/13 過期）</span>
+        </li>
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>遠端連線：等 Leon 用 USB 在拍貼機安裝 RustDesk，或決定其他方法</span>
+        </li>
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>LINE 故障通知：等 Leon 開好 LINE 官方帳號</span>
+        </li>
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>優惠券：等 Leon 提供內容後再建立，先不要發</span>
+        </li>
+        <li class="done">
+          <input type="checkbox" checked disabled aria-label="已完成">
+          <span>價格維持測試值，先不改</span>
+        </li>
+        <li class="done">
+          <input type="checkbox" checked disabled aria-label="已完成">
+          <span>故障聯絡電話維持不變，先不要問廠商</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="schedule" aria-labelledby="schedule-heading">
+      <h2 id="schedule-heading">排程狀態</h2>
+      <p class="schedule">Paper Room 每日耗材與營收檢查：每天 10:00（台北時間），<strong>暫停</strong>，等開店後啟用。</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var button = document.getElementById("theme-toggle");
+      var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function systemTheme() {
+        return media.matches ? "dark" : "light";
+      }
+
+      function activeTheme() {
+        var set = root.getAttribute("data-theme");
+        if (set === "light" || set === "dark") return set;
+        return systemTheme();
+      }
+
+      function paint() {
+        var theme = activeTheme();
+        var nextLabel = theme === "dark" ? "亮色" : "暗色";
+        button.textContent = nextLabel;
+        button.setAttribute("aria-label", "切換為" + nextLabel + "模式");
+        button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      }
+
+      button.addEventListener("click", function () {
+        var next = activeTheme() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try {
+          localStorage.setItem("paperroom-theme", next);
+        } catch (e) {}
+        paint();
+      });
+
+      if (typeof media.addEventListener === "function") {
+        media.addEventListener("change", function () {
+          if (!root.getAttribute("data-theme")) paint();
+        });
+      }
+
+      paint();
+    })();
+  </script>
+</body>
+</html>
