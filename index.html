@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Paper Room 拍貼機整合管理（內容參考）</title>
+  <meta name="description" content="資料最後讀取 11/01 10:24（台北時間），不是即時資料；商戶後台登入已過期。">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("paperroom-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">跳至內容</a>
+  <header class="site-header">
+    <div class="titles">
+      <h1>Paper Room 拍貼機整合管理 <span class="tag">（內容參考）</span></h1>
+      <p class="lead">資料最後讀取 <span class="nowrap">11/01 10:24</span>（台北時間），商戶後台登入已過期。</p>
+    </div>
+    <button type="button" class="theme-toggle" id="theme-toggle">外觀</button>
+  </header>
+
+  <nav class="toc" aria-label="頁面章節">
+    <a href="#status">整體狀況</a>
+    <a href="#revenue">營收</a>
+    <a href="#entries">後台入口</a>
+    <a href="#machines">兩台機台比較</a>
+    <a href="#faults">故障紀錄</a>
+    <a href="#unset">尚未設定</a>
+    <a href="#todos">待辦與決策</a>
+  </nav>
+
+  <main id="content">
+    <section id="status" aria-labelledby="status-heading">
+      <h2 id="status-heading">整體狀況</h2>
+      <p class="stats">
+        <span><span class="k">累計營業額</span> <span class="v">NT$1,200</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">累計訂單</span> <span class="v">63 筆</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">在線機台</span> <span class="v">0/2</span><span class="hint">最後讀取時離線</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">耗材不足</span> <span class="v">0/2</span><span class="hint">提醒值 20</span></span>
+      </p>
+    </section>
+
+    <section id="revenue" aria-labelledby="revenue-heading">
+      <h2 id="revenue-heading">營收</h2>
+      <p class="stats revenue-stats">
+        <span><span class="k">總訂單</span> <span class="v">63 筆</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">總營收</span> <span class="v">NT$1,200</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">拍照 14800 已知</span> <span class="v">27 筆</span><span class="hint">NT$300</span></span><span class="sep" aria-hidden="true">；</span>
+        <span><span class="k">其餘</span> <span class="v">未分機台</span><span class="hint">不能直接當成列印 14774</span></span>
+      </p>
+      <p class="note">資料截至 11/01 10:24（台北時間），金額以台幣顯示。</p>
+    </section>
+
+    <section id="entries" aria-labelledby="entries-heading">
+      <h2 id="entries-heading">後台入口</h2>
+      <div class="entry-grid">
+        <a class="entry-btn" href="https://timefilter.aishiguang.net/merchant/#/home" target="_blank" rel="noopener noreferrer">
+          <strong>商戶後台</strong>
+          <span>兩台都看得到</span>
+        </a>
+        <a class="entry-btn" href="https://open.timefilter.aishiguang.net" target="_blank" rel="noopener noreferrer">
+          <strong>上傳後台</strong>
+          <span>只看得到拍照 14800</span>
+        </a>
+        <a class="entry-btn" href="https://docs.google.com/spreadsheets/d/1kEh00nAgCw-cBLtCmwsJJAkqkM65LW64_sy0YJ4vDwc/edit" target="_blank" rel="noopener noreferrer">
+          <strong>拍貼機紀錄表</strong>
+          <span>每日紀錄與待辦</span>
+        </a>
+        <a class="entry-btn" href="https://docs.google.com/spreadsheets/d/1bL2M-N_VRz-oKEYswsMTE5MXtPQQ5gHz0dAesCtzaiY/edit" target="_blank" rel="noopener noreferrer">
+          <strong>補貨／支出試算表</strong>
+          <span>工讀生補貨用</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="machines" aria-labelledby="machines-heading">
+      <h2 id="machines-heading">兩台機台比較</h2>
+      <p class="machine-ids">列印 14774：TFD20260811-14774-PASR<br>拍照 14800：TFD20260817-14800-PASR</p>
+      <div class="compare" role="table" aria-label="兩台機台比較">
+        <div class="compare-head" role="row">
+          <span role="columnheader"></span>
+          <strong role="columnheader">列印 14774 <span class="id">TFD20260811-14774-PASR</span></strong>
+          <strong role="columnheader">拍照 14800 <span class="id">TFD20260817-14800-PASR</span></strong>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">貼紙剩餘</span>
+          <span role="cell">192</span>
+          <span role="cell">187</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">提醒值</span>
+          <span role="cell">20</span>
+          <span role="cell">20</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">點數</span>
+          <span role="cell">759</span>
+          <span role="cell">759</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">基本價</span>
+          <span role="cell">0（測試）</span>
+          <span role="cell">0（測試）</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">加印價</span>
+          <span role="cell">0.01（測試）</span>
+          <span role="cell">0.01（測試）</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">最後更新</span>
+          <span role="cell">10/26 16:13</span>
+          <span role="cell">10/26 17:48</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">狀態</span>
+          <span role="cell"><span class="pill pill-off">離線</span></span>
+          <span role="cell"><span class="pill pill-off">離線</span></span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">軟體版本</span>
+          <span class="muted" role="cell">無資料</span>
+          <span role="cell">2.2.32</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">最後上線</span>
+          <span class="muted" role="cell">無資料</span>
+          <span role="cell">10/29 20:05</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span class="k" role="rowheader">介面</span>
+          <span class="muted" role="cell">無資料</span>
+          <span role="cell">14800-貼紙大頭貼-繁體</span>
+        </div>
+      </div>
+      <p class="callout">價格維持測試值，要改之前先回報。</p>
+    </section>
+
+    <section id="faults" aria-labelledby="faults-heading">
+      <h2 id="faults-heading">故障紀錄</h2>
+      <p>列印 14774、拍照 14800 在 11/01 12:04 前共 19 則已修好，之後尚無新故障。</p>
+    </section>
+
+    <section id="unset" aria-labelledby="unset-heading">
+      <h2 id="unset-heading">後台尚未設定的功能</h2>
+      <div class="unset-grid">
+        <a class="unset-btn" href="https://timefilter.aishiguang.net/merchant/#/home" target="_blank" rel="noopener noreferrer">
+          <strong>WeChat 故障通知</strong>
+          <span>未開啟</span>
+        </a>
+        <a class="unset-btn" href="https://timefilter.aishiguang.net/merchant/#/home" target="_blank" rel="noopener noreferrer">
+          <strong>優惠券</strong>
+          <span>尚未建立</span>
+        </a>
+        <a class="unset-btn" href="https://timefilter.aishiguang.net/merchant/#/home" target="_blank" rel="noopener noreferrer">
+          <strong>錢包／銀行卡</strong>
+          <span>未綁定</span>
+        </a>
+        <a class="unset-btn" href="https://timefilter.aishiguang.net/merchant/#/home" target="_blank" rel="noopener noreferrer">
+          <strong>店址</strong>
+          <span>未填寫</span>
+        </a>
+        <a class="unset-btn" href="https://timefilter.aishiguang.net/merchant/#/home" target="_blank" rel="noopener noreferrer">
+          <strong>員工帳號與權限</strong>
+          <span>可新增，尚未使用</span>
+        </a>
+        <a class="unset-btn" href="https://timefilter.aishiguang.net/merchant/#/home" target="_blank" rel="noopener noreferrer">
+          <strong>遠端重開機</strong>
+          <span>機台頁有按鈕</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="todos" aria-labelledby="todos-heading">
+      <h2 id="todos-heading">待辦與決策</h2>
+      <ul class="tasks">
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>重新登入商戶後台，更新貼紙數量（登入已於 11/13 過期）</span>
+        </li>
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>遠端連線：等以 USB 在機台安裝 RustDesk</span>
+        </li>
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>LINE 故障通知：等官方帳號開好</span>
+        </li>
+        <li>
+          <input type="checkbox" disabled aria-label="未完成">
+          <span>優惠券：等內容確定後再建立，先不要發</span>
+        </li>
+        <li class="done">
+          <input type="checkbox" checked disabled aria-label="已完成">
+          <span>價格維持測試值，先不改</span>
+        </li>
+        <li class="done">
+          <input type="checkbox" checked disabled aria-label="已完成">
+          <span>故障電話維持不變，先不要問廠商</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <p class="foot-note" id="schedule">每日耗材與營收檢查（每天 10:00）已暫停，等開店後啟用。</p>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var button = document.getElementById("theme-toggle");
+      var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function systemTheme() {
+        return media.matches ? "dark" : "light";
+      }
+
+      function activeTheme() {
+        var set = root.getAttribute("data-theme");
+        if (set === "light" || set === "dark") return set;
+        return systemTheme();
+      }
+
+      function paint() {
+        var theme = activeTheme();
+        var nextLabel = theme === "dark" ? "亮色" : "暗色";
+        button.textContent = nextLabel;
+        button.setAttribute("aria-label", "切換為" + nextLabel + "模式");
+        button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      }
+
+      button.addEventListener("click", function () {
+        var next = activeTheme() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try {
+          localStorage.setItem("paperroom-theme", next);
+        } catch (e) {}
+        paint();
+      });
+
+      if (typeof media.addEventListener === "function") {
+        media.addEventListener("change", function () {
+          if (!root.getAttribute("data-theme")) paint();
+        });
+      }
+
+      paint();
+    })();
+  </script>
+</body>
+</html>
